@@ -1,0 +1,134 @@
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(18, 18, 18, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(159, 122, 234, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(159, 122, 234, 0.7);
+}
+
+/* Enhanced smooth scrolling behavior for the entire page */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Add padding to account for fixed navbar */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .appear, .fade-in, .section-highlight, .section-highlight::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Enhanced section highlight animation when navigated via side navigation */
+.section-highlight {
+  animation: section-pulse 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+@keyframes section-pulse {
+  0% { background-color: rgba(159, 122, 234, 0); }
+  30% { background-color: rgba(159, 122, 234, 0.08); }
+  70% { background-color: rgba(159, 122, 234, 0.05); }
+  100% { background-color: rgba(159, 122, 234, 0); }
+}
+
+.section-highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(159, 122, 234, 0.15);
+  opacity: 0;
+  animation: glow-pulse 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes glow-pulse {
+  0% { opacity: 0; }
+  30% { opacity: 0.5; }
+  70% { opacity: 0.3; }
+  100% { opacity: 0; }
+}
+
+/* Ensure sections have proper spacing and responsive behavior */
+section {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh; /* Ensure each section fills at least full viewport */
+  scroll-margin-top: 80px; /* Modern alternative to scroll-padding */
+  transition: opacity 0.3s ease;
+  padding-top: 40px; /* Add extra padding to ensure sections start below navbar */
+  outline: none; /* Remove focus outline when scrolled to via JS */
+}
+
+/* Highlight active sections for better visual feedback */
+section:target {
+  animation: highlight 1s ease-out;
+}
+
+@keyframes highlight {
+  0% { background-color: rgba(159, 122, 234, 0.05); }
+  100% { background-color: transparent; }
+}
+
+/* Add specific target styles for each section to improve navigation */
+#inicio:target, #acerca:target, #proyectos:target, #habilidades:target, #contacto:target {
+  scroll-margin-top: 80px;
+}
+
+/* Animaciones mejoradas para transiciones de página */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Transiciones más suaves para todas las interacciones */
+a, button, input, textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efectos de hover mejorados */
+a:hover, button:hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animación de entrada y salida para elementos */
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación de aparición para elementos que entran en el viewport */
+.appear {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.appear.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
