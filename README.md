@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgur.com/F1IBNhN.png" alt="Victor Hidalgo Portfolio" width="150" height="150" style="border-radius:20px;"/>
+
   
   # Victor Hidalgo | Portfolio
   
@@ -28,19 +28,6 @@
 </div>
 
 <br />
-
-## 🌟 Live Demo
-
-<div align="center">
-  <a href="https://victorhidalgo.dev" target="_blank">
-    <img src="https://img.shields.io/badge/VIEW_DEMO-Visit_Site-8A2BE2?style=for-the-badge" alt="View Demo" />
-  </a>
-</div>
-
-<p align="center">
-  <i>Note: The live demo will be available soon. The link above is a placeholder.</i>
-</p>
-
 ## 📋 Overview
 
 This portfolio website showcases my skills, projects, and experience as a frontend developer. Built with modern technologies and best practices, it features a sleek dark-themed UI with purple accents, fluid animations, and a responsive design that looks great on all devices.
@@ -217,19 +204,6 @@ The portfolio website includes these key sections:
 - **Skills** — Technical skills and competencies visualization
 - **Contact** — Contact information and social media links
 
-## 📊 Performance
-
-This project is built with performance in mind, consistently scoring high on Lighthouse metrics:
-
-<div align="center">
-  <img src="https://i.imgur.com/kPXNwzH.png" alt="Lighthouse Scores" width="600" style="border-radius:8px;"/>
-</div>
-
-- **Performance**: 97/100
-- **Accessibility**: 100/100
-- **Best Practices**: 100/100
-- **SEO**: 100/100
-
 ## 📞 Contact
 
 <div align="center">
@@ -245,10 +219,6 @@ This project is built with performance in mind, consistently scoring high on Lig
     <img src="https://img.shields.io/badge/Email-Contact_Me-d14836?style=for-the-badge&logo=gmail" alt="Email" />
   </a>
 </div>
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
