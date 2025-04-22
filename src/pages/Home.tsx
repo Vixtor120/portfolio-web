@@ -56,8 +56,6 @@ const Home: React.FC = () => {
     });
   }, []);
 
-  // Hooks para efectos de parallax
-  const slowParallax = useParallaxScroll(0.08);
   const mediumParallax = useParallaxScroll(0.15);
   const fastParallax = useParallaxScroll(-0.1);
 
