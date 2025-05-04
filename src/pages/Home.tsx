@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import HomeSection from '../components/sections/HomeSection';
 import AboutSection from '../components/sections/AboutSection';
 import ProyectoSection from '../components/sections/ProyectoSection';
+import HabilidadesSection from '../components/sections/HabilidadesSection';
+import ContactSection from '../components/sections/ContactSection';
 
 // Animaciones para los elementos de las secciones
 const fadeInUp = {
@@ -56,9 +58,6 @@ const Home: React.FC = () => {
     });
   }, []);
 
-  const mediumParallax = useParallaxScroll(0.15);
-  const fastParallax = useParallaxScroll(-0.1);
-
   return (
     <main>
       {/* Usando nuestro nuevo componente HomeSection */}
@@ -70,45 +69,11 @@ const Home: React.FC = () => {
       {/* Usando nuestro nuevo componente ProyectoSection */}
       <ProyectoSection />
       
-      {/* Sección de Habilidades */}
-      <section id="habilidades" className="min-h-screen py-20 flex items-center justify-center relative">
-        <motion.div 
-          className="container mx-auto px-4 text-center relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-4xl md:text-6xl font-bold text-white"
-            variants={fadeInUp}
-            custom={0}
-            style={fastParallax}
-          >
-            Habilidades
-          </motion.h2>
-        </motion.div>
-      </section>
+      {/* Usando nuestro nuevo componente HabilidadesSection */}
+      <HabilidadesSection />
       
-      {/* Sección de Contacto */}
-      <section id="contacto" className="min-h-screen py-20 flex items-center justify-center relative">
-        <motion.div 
-          className="container mx-auto px-4 text-center relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-4xl md:text-6xl font-bold text-white"
-            variants={fadeInUp}
-            custom={0}
-            style={mediumParallax}
-          >
-            Contacto
-          </motion.h2>
-        </motion.div>
-      </section>
+      {/* Usando nuestro nuevo componente ContactSection */}
+      <ContactSection />
     </main>
   );
 };

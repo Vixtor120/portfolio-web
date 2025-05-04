@@ -162,22 +162,34 @@ const AboutSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 items-start">
           <div className="space-y-8">
             <motion.div
-              className="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-xl border-2 border-dashed border-[#9f7aea]/30 bg-[#1a1433]/20 flex items-center justify-center"
+              className="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-xl border-2 border-[#9f7aea]/30 bg-[#1a1433]/20"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              whileHover={{ borderColor: 'rgba(159, 122, 234, 0.5)' }}
+              whileHover={{ 
+                borderColor: 'rgba(159, 122, 234, 0.5)',
+                boxShadow: '0 20px 40px -12px rgba(159, 122, 234, 0.3)'
+              }}
             >
-              <div className="text-center px-8">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1a1433]/60 border border-[#9f7aea]/30 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-[#9f7aea]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <p className="text-[#e9d8fd]/70 text-sm">Espacio reservado para tu fotografía</p>
-                <p className="text-[#9f7aea] mt-2 text-xs">¡Próximamente!</p>
+              {/* Photo with styling */}
+              <motion.img 
+                src="/foto.jpeg" 
+                alt="Victor Hidalgo" 
+                className="w-full h-full object-cover object-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+              />
+              
+              {/* Gradient overlay for better text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/80 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Optional caption at the bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                <h3 className="text-xl font-medium text-white">Victor Hidalgo</h3>
               </div>
+              
+              {/* Corner decorative elements */}
               <div className="absolute top-3 left-3 w-5 h-5 border-t-2 border-l-2 border-[#9f7aea]/50 rounded-tl-md"></div>
               <div className="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-[#9f7aea]/50 rounded-tr-md"></div>
               <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-[#9f7aea]/50 rounded-bl-md"></div>
@@ -275,8 +287,8 @@ const AboutSection: React.FC = () => {
                 </motion.a>
 
                 <motion.a
-                  href="/cv.pdf"
-                  download
+                  href="/CuriculumVitae-VictorHidalgo.pdf"
+                  download="CuriculumVitae-VictorHidalgo.pdf"
                   className="p-2 rounded-lg bg-gradient-to-r from-[#9f7aea]/20 to-[#6b46c1]/20 text-[#e9d8fd] transition-all flex items-center gap-1.5"
                   whileHover={{ y: -2, scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

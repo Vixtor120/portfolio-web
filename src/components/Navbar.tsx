@@ -198,8 +198,8 @@ const Navbar = ({ activeLink, setActiveLink, navLinks }: NavbarProps) => {
                 
                 {/* Botón de CV mejorado */}
                 <motion.a
-                  href="/cv.pdf"
-                  download
+                  href="/CuriculumVitae-VictorHidalgo.pdf"
+                  download="CuriculumVitae-VictorHidalgo.pdf"
                   className="px-2.5 py-1.5 rounded-full flex items-center gap-1.5 bg-gradient-to-r from-[#9f7aea]/30 to-[#6b46c1]/30 text-white border border-[#9f7aea]/30 hover:border-[#9f7aea]/60 relative overflow-hidden group"
                   whileHover={{ scale: 1.05, y: -1 }}
                   whileTap={{ scale: 0.97 }}
