@@ -1,9 +1,24 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
+// Define interfaces for project data structure
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  codeLink: string;
+  demoLink: string;
+  image: string;
+  color: string;
+}
+
+interface ProjectCardProps {
+  project: Project;
+}
+
 const ProyectoSection: React.FC = () => {
   // Single project only - Good Vibes Podcast
-  const project = {
+  const project: Project = {
     title: "Good Vibes Podcast",
     description: "Plataforma web para un podcast sincero con contenido variado creado para compartir opiniones personales en un formato casual y auténtico. Incluye un reproductor personalizado con controles de volumen y progreso, animaciones fluidas con Framer Motion y diseño responsivo.",
     technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
@@ -104,8 +119,8 @@ const ProyectoSection: React.FC = () => {
   );
 };
 
-// Separated project card component with code and demo buttons
-const ProjectCard = ({ project }) => {
+// Separated project card component with code and demo buttons with proper TypeScript types
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -165,7 +180,7 @@ const ProjectCard = ({ project }) => {
             
             {/* Technologies with interactive badges */}
             <div className="flex flex-wrap gap-2 mb-8">
-              {project.technologies.map((tech) => (
+              {project.technologies.map((tech: string) => (
                 <motion.span
                   key={tech}
                   className="text-xs px-3 py-1.5 rounded-full bg-[#1a1433]/60 border border-[#9f7aea]/20 text-[#e9d8fd]/90"
