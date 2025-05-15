@@ -221,7 +221,7 @@ const HabilidadesSection: React.FC = () => {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <InfoItem label="Teléfono" value="(+34) 655 35 34 25" />
             <InfoItem label="Email" value="victorhidalgosanjurjo.1@gmail.com" />
-            <InfoItem label="Ubicación" value="08923 Santa Coloma de Gramenet" />
+            <InfoItem label="Ubicación" value="08923 Barcelona" />
             <InfoItem label="LinkedIn" value="www.linkedin.com/in/vichidsan" isLink />
           </div>
         </motion.div>
