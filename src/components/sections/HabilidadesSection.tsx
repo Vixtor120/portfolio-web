@@ -28,7 +28,14 @@ const HabilidadesSection: React.FC = () => {
       "Figma",
       "Canva",
       "VMware",
-      "Jira"
+      "Jira",
+      "Git | GitHub",
+      "Postman",
+      "Visual Studio Code",
+      "IntelliJ IDEA",
+      "Eclipse",
+      "NetBeans",
+      "Docker",
     ],
     "Competencias Personales": [
       "Trabajo en Equipo",

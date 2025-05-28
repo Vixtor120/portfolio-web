@@ -31,7 +31,7 @@ const AboutSection: React.FC = () => {
       institution: "Monlau Formación Profesional",
       period: "2023 - 2025",
       type: "Grado Superior",
-      badge: "Actual"
+      badge: "Completado"
     },
     {
       title: "Sistemas Microinformáticos y Redes",
@@ -48,7 +48,7 @@ const AboutSection: React.FC = () => {
       company: "Guttman",
       period: "Proyecto DAW",
       description: "Desarrollo de juegos neuropsicológicos para contribuir a la salud cognitiva.",
-      badge: "Actual"
+      badge: "Completado"
     },
     {
       role: "Desarrollador en prácticas",
