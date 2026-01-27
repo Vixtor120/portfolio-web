@@ -85,7 +85,7 @@ const ProyectoSection: React.FC = () => {
       <div className="container mx-auto max-w-6xl z-10">
         {/* Clean section header */}
         <motion.div 
-          className="text-center mb-8"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -97,30 +97,35 @@ const ProyectoSection: React.FC = () => {
               Proyectos
             </span>
           </h2>
-          <p className="text-[#e9d8fd]/80 text-base md:text-lg max-w-3xl mx-auto">
-            Estos son algunos de los proyectos que he ido realizando por cuenta ajena, 
-            por colaboración con empresas o autoemprendimiento.
+          <p className="text-[#e9d8fd]/80 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+            Algunos de los proyectos que he ido realizando por cuenta ajena, 
+            colaboración con empresas o autoemprendimiento.
           </p>
+          <div className="mt-4 w-20 h-1 bg-gradient-to-r from-[#60a5fa] to-[#2563eb] mx-auto rounded-full" />
         </motion.div>
         
         
         {/* Browser-style interface (tabs + search bar) - estilo Google Chrome */}
-        <div className="mb-8">
-          <div className="bg-[#0b1220]/60 backdrop-blur-md rounded-t-xl border border-[#60a5fa]/20 border-b-0 p-2">
-            <div className="flex items-center gap-3">
+        <div className="mb-0">
+          <div className="bg-gradient-to-r from-[#0b1220]/80 to-[#0d1526]/60 backdrop-blur-md rounded-t-2xl border-t border-l border-r border-[#60a5fa]/30 p-3 shadow-xl shadow-[#60a5fa]/10">
+            <div className="flex flex-wrap items-center gap-3 pb-2 pr-2">
               {/* Tabs container - lado izquierdo */}
-              <div className="flex gap-1 overflow-x-auto flex-shrink-0">
+              <div className="flex flex-wrap gap-2 flex-1 min-w-full sm:min-w-0">
                 {projects.map((project, index) => {
                   const isActive = activeTab === index;
                   return (
                     <motion.button
                       key={project.title}
                       onClick={() => setActiveTab(index)}
-                      className={`relative flex items-center gap-2 px-4 py-2 rounded-t-lg transition-all min-w-fit group ${
+                      layoutId={isActive ? "activeTabButton" : undefined}
+                      className={`relative flex items-center gap-2 px-4 py-2.5 rounded-lg min-w-[140px] sm:min-w-fit w-full sm:w-auto group border-t-2 border-l-2 border-r-2 font-semibold transition-all ${
                         isActive
-                          ? 'bg-[#0d1526] text-white'
-                          : 'bg-transparent text-[#e9d8fd]/60 hover:bg-[#0d1526]/50 hover:text-[#e9d8fd]/90'
+                          ? 'bg-gradient-to-r from-[#60a5fa]/20 to-[#2563eb]/20 text-white border-[#60a5fa] shadow-lg shadow-[#60a5fa]/20'
+                          : 'bg-transparent text-[#e9d8fd]/70 hover:bg-[#0d1526]/40 hover:text-[#e9d8fd] border-transparent'
                       }`}
+                      whileHover={{ scale: 1.04, y: -2 }}
+                      whileTap={{ scale: 0.96 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     >
                       <div className="w-4 h-4 rounded-sm overflow-hidden flex items-center justify-center">
                         <img src={project.logo} alt={project.title} className="w-full h-full object-contain" />
@@ -143,24 +148,16 @@ const ProyectoSection: React.FC = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       </motion.button>
-                      
-                      {isActive && (
-                        <motion.div
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#60a5fa]"
-                          layoutId="activeTab"
-                        />
-                      )}
                   </motion.button>
                 );
               })}
             </div>            
-            </div>
           </div>
           
           {/* Content area below tabs */}
-          <div className="bg-[#0d1526]/40 backdrop-blur-sm border border-[#60a5fa]/20 rounded-b-xl rounded-tr-xl p-8 min-h-[400px]">
+          <div className="bg-gradient-to-b from-[#0d1526]/60 to-[#0b1220]/40 backdrop-blur-md border-b border-l border-r border-[#60a5fa]/30 rounded-b-2xl p-4 sm:p-6 lg:p-8 min-h-[320px] shadow-xl shadow-[#60a5fa]/10">
             {activeTab === null ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                   <ProjectCard
                     key={project.title}
@@ -189,7 +186,7 @@ const ProyectoSection: React.FC = () => {
       
       {/* Enhanced GitHub link */}
       <motion.div 
-        className="mt-14 text-center"
+        className="mt-16 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -199,16 +196,27 @@ const ProyectoSection: React.FC = () => {
           href="https://github.com/Vixtor120"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-[#60a5fa]/30 text-white hover:border-[#60a5fa]/60 bg-[#0b1220]/40 backdrop-blur-sm transition-all relative group"
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-xl border-2 border-[#60a5fa]/50 text-white bg-gradient-to-r from-[#60a5fa]/10 to-[#2563eb]/10 hover:from-[#60a5fa]/20 hover:to-[#2563eb]/20 backdrop-blur-sm transition-all relative group font-semibold shadow-lg shadow-[#60a5fa]/10"
+          whileHover={{ scale: 1.05, borderColor: "rgba(96, 165, 250, 0.8)" }}
+          whileTap={{ scale: 0.97 }}
         >
-          <span className="relative z-10">Ver más proyectos en GitHub</span>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#60a5fa] group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#60a5fa]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
           </svg>
+          <span className="relative z-10">Ver más proyectos en GitHub</span>
+          <motion.svg 
+            className="h-5 w-5 text-[#60a5fa] group-hover:translate-x-1 transition-transform" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+            animate={{ x: [0, 3, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </motion.svg>
         </motion.a>
       </motion.div>
+      </div>
       </div>
     </section>
   );
@@ -327,7 +335,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isExpanded, onClick 
       ) : (
         // Expanded card view - Enhanced Professional Design
         <motion.div 
-          className="md:flex min-h-[500px] rounded-xl overflow-hidden relative"
+          className="md:flex min-h-[480px] rounded-xl overflow-hidden relative"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}
@@ -347,7 +355,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isExpanded, onClick 
           </motion.button>
 
           {/* Left side - Logo and info with enhanced design */}
-          <div className={`md:w-2/5 p-10 bg-gradient-to-br ${project.color} backdrop-blur-sm flex flex-col items-center justify-center border-r border-[#60a5fa]/30 relative overflow-hidden`}>
+          <div className={`md:w-2/5 w-full p-6 sm:p-8 md:p-10 bg-gradient-to-br ${project.color} backdrop-blur-sm flex flex-col items-center justify-center border-r border-[#60a5fa]/30 relative overflow-hidden`}>
             {/* Animated background pattern */}
             <motion.div
               className="absolute inset-0 opacity-10"
@@ -374,7 +382,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isExpanded, onClick 
                 className="mb-8"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} blur-3xl opacity-70`}></div>
-                <div className="relative w-44 h-44 rounded-3xl bg-gradient-to-br from-[#0b1220] to-[#0d1526] border-2 border-[#60a5fa]/50 flex items-center justify-center overflow-hidden p-6 shadow-2xl">
+                <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-3xl bg-gradient-to-br from-[#0b1220] to-[#0d1526] border-2 border-[#60a5fa]/50 flex items-center justify-center overflow-hidden p-4 sm:p-5 md:p-6 shadow-2xl">
                   <img 
                     src={project.logo} 
                     alt={project.title}
@@ -421,7 +429,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isExpanded, onClick 
           </div>
 
           {/* Right side - Details with enhanced layout */}
-          <div className="md:w-3/5 p-10 bg-[#0b1220]/20 relative">
+          <div className="md:w-3/5 w-full p-6 sm:p-8 md:p-10 bg-[#0b1220]/20 relative">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-[#60a5fa]/5 to-transparent rounded-full blur-3xl"></div>
             
@@ -453,7 +461,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isExpanded, onClick 
                   <div className="w-1.5 h-9 bg-gradient-to-b from-[#60a5fa] to-[#2563eb] rounded-full shadow-lg shadow-blue-500/50"></div>
                   <h4 className="text-xl font-bold text-white">Tecnologías Utilizadas</h4>
                 </div>
-                <div className="flex flex-wrap gap-3 pl-7">
+                <div className="flex flex-wrap gap-3 pl-0 sm:pl-7">
                   {project.technologies.map((tech, index) => (
                     <motion.span
                       key={index}
@@ -479,13 +487,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isExpanded, onClick 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="pl-7 pt-4"
+                className="pl-0 sm:pl-7 pt-4"
               >
                 <motion.a
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl bg-gradient-to-r from-[#60a5fa] to-[#2563eb] text-white font-bold text-lg shadow-2xl shadow-blue-500/50 relative overflow-hidden group border-2 border-[#60a5fa]/50"
+                  className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 rounded-xl bg-gradient-to-r from-[#60a5fa] to-[#2563eb] text-white font-bold text-lg shadow-2xl shadow-blue-500/50 relative overflow-hidden group border-2 border-[#60a5fa]/50 w-full sm:w-auto"
                   whileHover={{ 
                     scale: 1.05, 
                     boxShadow: "0 25px 50px -10px rgba(37, 99, 235, 0.7)"
