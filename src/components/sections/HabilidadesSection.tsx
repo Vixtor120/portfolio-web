@@ -319,7 +319,7 @@ const InfoItem: React.FC<InfoItemProps> = ({ label, value }) => {
       whileHover={{ y: -2 }}
     >
       <span className="text-xs text-[#60a5fa] font-semibold block mb-1">{label}</span>
-      <span className="text-sm text-[#e9d8fd] block">{value}</span>
+      <span className="text-sm text-[#e9d8fd] block break-words line-clamp-2">{value}</span>
     </motion.div>
   );
 };
