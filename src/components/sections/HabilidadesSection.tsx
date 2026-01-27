@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React from 'react';
 
 const HabilidadesSection: React.FC = () => {
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-
   const skills = {
     "Sistemas y Redes": [
       "Administración de sistemas Windows y Linux",
@@ -48,80 +46,82 @@ const HabilidadesSection: React.FC = () => {
       "Apache NetBeans",
       "Android Studio",
       "Git / GitHub",
+      "Notion",
+      "Postman",
       "Docker",
-      "XAMPP",
-      "Laragon",
-      "Jira"
+      "Figma"
     ],
     "Infraestructura y Virtualización": [
-      "VMware",
-      "VirtualBox",
-      "Cisco Packet Tracer",
-      "Putty",
-      "Hostinger, IONOS, Vercel"
+      "Virtualización básica (VirtualBox, VMware)",
+      "Contenedores (Docker, Podman)",
+      "Control de versiones (Git, GitHub)",
+      "Plataformas en la nube (Azure, AWS básico)",
+      "CI/CD básico"
     ],
     "Diseño & Creatividad": [
-      "Figma",
-      "Canva",
-      "Diseño de interfaces",
-      "Prototipado"
+      "Figma (prototipado de interfaces)",
+      "Diseño UX/UI",
+      "Edición básica de imágenes",
+      "Creatividad en solución de problemas"
     ],
     "Soft Skills": [
-      "Trabajo en Equipo",
-      "Organización",
-      "Adaptabilidad", 
-      "Gestión de Proyectos",
-      "Gestión del Tiempo",
-      "Gestión de Riesgos"
+      "Comunicación efectiva",
+      "Trabajo en equipo y colaboración",
+      "Liderazgo y toma de decisiones",
+      "Capacidad de resolución de conflictos",
+      "Adaptabilidad y flexibilidad",
+      "Empatía"
     ],
     "Herramientas Transversales": [
-      "Inteligencia Artificial aplicada",
-      "Transformación Digital",
-      "Innovación tecnológica"
+      "Microsoft Office 365",
+      "Google Workspace",
+      "Project Management (Jira, Trello, Asana)"
     ],
     "Idiomas": [
-      "Castellano: Nativo",
-      "Catalán: Nativo",
-      "Inglés: Nivel Técnico"
+      "Español (Nativo)",
+      "Inglés (Intermedio)",
+      "Gallego (Básico)"
     ]
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
     <section id="habilidades" className="py-20 md:py-24 min-h-screen flex items-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
-      {/* Background elements */}
+      {/* Enhanced Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0a19] via-[#121212] to-[#1a1028] opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0b1220] via-[#0d1526] to-[#0f172a] opacity-80" />
         
-        {/* Gradient blob */}
+        {/* Multiple animated blobs */}
         <motion.div
-          className="absolute top-1/3 left-1/4 w-[40vw] h-[40vw] opacity-[0.12]"
+          className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] opacity-[0.15]"
           animate={{
-            scale: [1, 1.05, 1],
-            filter: ["blur(70px)", "blur(85px)", "blur(70px)"]
+            scale: [1, 1.1, 1],
+            filter: ["blur(70px)", "blur(90px)", "blur(70px)"]
           }}
           transition={{
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             repeatType: "reverse"
           }}
@@ -129,136 +129,178 @@ const HabilidadesSection: React.FC = () => {
           <div className="w-full h-full rounded-full bg-gradient-to-br from-[#60a5fa] to-[#2563eb]" />
         </motion.div>
         
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] opacity-[0.1]"
+          animate={{
+            scale: [1.05, 1, 1.05],
+            filter: ["blur(60px)", "blur(80px)", "blur(60px)"]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: 5
+          }}
+        >
+          <div className="w-full h-full rounded-full bg-gradient-to-tr from-[#2563eb] to-[#60a5fa]" />
+        </motion.div>
+        
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiM2YjQ2YzEiIGZpbGwtb3BhY2l0eT0iMC4wMyIgZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2LTJoLTF2MnptLTUtNGg0di0xaC00djF6bTktMWgtMXYxaDJ2LTFoLTF6bS0yLTJoMXYtMWgtMXYxem0tNCAwaDN2LTFoLTN2MXptMS0yaDF2LTFoLTF2MXptLTUgMGgxdi0xaC0xdjF6bTggMGgxdi0xaC0xdjF6bTEtMmgxdi0xaC0xdjF6bS0yIDBhMSAxIDAgMSAxIDAgMiAxIDEgMCAwIDEgMC0yem0tNiAwaDFWOWgtMXYxem0yLTV2NGgtMVY0aC00djFoM3Y0SDh2NGg0di0xSDlWOWgzVjVoNXpNNCAxM2g1di0xSDR2MXptMCA0aDJ2LTJINHYyeiIvPjwvZz48L3N2Zz4=')] opacity-20" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiM2MGE1ZmEiIGZpbGwtb3BhY2l0eT0iMC4wMyIgZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2LTJoLTF2MnptLTUtNGg0di0xaC00djF6bTktMWgtMXYxaDJ2LTFoLTF6bS0yLTJoMXYtMWgtMXYxem0tNCAwaDN2LTFoLTN2MXptMS0yaDF2LTFoLTF2MXptLTUgMGgxdi0xaC0xdjF6bTggMGgxdi0xaC0xdjF6bTEtMmgxdi0xaC0xdjF6bS0yIDBhMSAxIDAgMSAxIDAgMiAxIDEgMCAwIDEgMC0yem0tNiAwaDFWOWgtMXYxem0yLTV2NGgtMVY0aC00djFoM3Y0SDh2NGg0di0xSDlWOWgzVjVoNXpNNCAxM2g1di0xSDR2MXptMCA0aDJ2LTJINHYyeiIvPjwvZz48L3N2Zz4=')] opacity-20" />
       </div>
 
-      <div className="container mx-auto max-w-6xl z-10">
+      <div className="container mx-auto max-w-7xl z-10">
         {/* Section header */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="inline-block mb-3 px-3 py-1 text-sm font-semibold text-[#60a5fa] rounded-md bg-[#0b1220]/30 border border-[#60a5fa]/10">
-            COMPETENCIAS TÉCNICAS
-          </span>
-          
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Mi{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] to-[#2563eb]">
               Stack Técnico
             </span>
           </h2>
           
-          <div className="w-16 h-1 bg-gradient-to-r from-[#60a5fa] to-[#2563eb] mx-auto rounded-full" />
+          <div className="mt-4 w-20 h-1 bg-gradient-to-r from-[#60a5fa] to-[#2563eb] mx-auto rounded-full" />
           
-          <p className="mt-4 text-[#e9d8fd]/70 max-w-lg mx-auto">
+          <p className="mt-6 text-[#e9d8fd]/70 max-w-2xl mx-auto text-lg">
             Mi stack, herramientas clave y áreas en las que me siento fuerte
           </p>
         </motion.div>
         
-        {/* Skills grid */}
+        {/* Skills grid - Nuevo layout */}
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {Object.entries(skills).map(([category, skillList]) => (
-            <motion.div
-              key={category}
-              className="relative overflow-hidden rounded-xl bg-[#0b1220]/30 backdrop-blur-sm border border-[#60a5fa]/10"
-              variants={itemVariants}
-              whileHover={{ 
-                y: -5, 
-                boxShadow: "0 20px 40px -12px rgba(159, 122, 234, 0.3)",
-                borderColor: "rgba(159, 122, 234, 0.3)"
-              }}
-              onHoverStart={() => setHoveredCategory(category)}
-              onHoverEnd={() => setHoveredCategory(null)}
-            >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
-                  <motion.div 
-                    className="w-1 h-6 bg-gradient-to-b from-[#60a5fa] to-[#2563eb] rounded-full mr-3"
-                    animate={{ 
-                      height: hoveredCategory === category ? 24 : 20,
-                      opacity: hoveredCategory === category ? 1 : 0.8 
-                    }}
+          {Object.entries(skills).map(([category, skillList]) => {
+            const categoryIcons: Record<string, string> = {
+              "Sistemas y Redes": "⚙️",
+              "Desarrollo Web": "💻",
+              "Bases de Datos": "🗄️",
+              "Ciberseguridad": "🔒",
+              "Herramientas de Desarrollo": "🛠️",
+              "Infraestructura y Virtualización": "☁️",
+              "Diseño & Creatividad": "🎨",
+              "Soft Skills": "💼",
+              "Herramientas Transversales": "🚀",
+              "Idiomas": "🌍"
+            };
+
+            return (
+              <motion.div
+                key={category}
+                className="group relative"
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div className="relative h-full rounded-2xl bg-gradient-to-br from-[#0d1526]/60 to-[#0b1220]/40 backdrop-blur-md border-2 border-[#60a5fa]/20 p-6 shadow-xl overflow-hidden transition-all duration-300 group-hover:border-[#60a5fa]/60 group-hover:shadow-2xl group-hover:shadow-[#60a5fa]/20">
+                  
+                  {/* Animated background gradient */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-[#60a5fa]/5 to-[#2563eb]/5 opacity-0 group-hover:opacity-100"
                     transition={{ duration: 0.3 }}
                   />
-                  {category}
-                </h3>
-                
-                <ul className="space-y-3">
-                  {skillList.map((skill, index) => (
-                    <motion.li 
-                      key={skill}
-                      className="flex items-center gap-3"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 + 0.3 }}
-                    >
+                  
+                  {/* Category Header */}
+                  <div className="relative z-10 mb-6">
+                    <div className="flex items-center gap-3 mb-4">
                       <motion.div 
-                        className="w-2 h-2 rounded-full bg-[#60a5fa]"
-                        animate={{ 
-                          scale: hoveredCategory === category ? [1, 1.2, 1] : 1 
-                        }}
-                        transition={{ 
-                          repeat: hoveredCategory === category ? Infinity : 0, 
-                          repeatDelay: 1,
-                          duration: 1
-                        }}
-                      />
-                      <span className="text-[#e9d8fd]/90 text-sm">{skill}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* Corner decoration */}
-              <div className="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-[#60a5fa]/30 rounded-tr-lg"></div>
-              <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-[#60a5fa]/30 rounded-bl-lg"></div>
-              
-              {/* Subtle glow effect on hover */}
-              {hoveredCategory === category && (
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#60a5fa]/5 to-[#2563eb]/5"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              )}
-            </motion.div>
-          ))}
+                        className="text-4xl"
+                        whileHover={{ scale: 1.2, rotate: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {categoryIcons[category]}
+                      </motion.div>
+                      <h3 className="text-lg font-bold text-white group-hover:text-[#60a5fa] transition-colors">
+                        {category}
+                      </h3>
+                    </div>
+                    
+                    {/* Category divider */}
+                    <motion.div
+                      className="h-0.5 bg-gradient-to-r from-[#60a5fa]/0 via-[#60a5fa]/60 to-[#60a5fa]/0"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      transition={{ delay: 0.2 }}
+                    />
+                  </div>
+                  
+                  {/* Skills list */}
+                  <ul className="relative z-10 space-y-2.5">
+                    {skillList.map((skill, index) => (
+                      <motion.li 
+                        key={skill}
+                        className="flex items-start gap-3 group/item"
+                        initial={{ opacity: 0, x: -15 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.08 }}
+                      >
+                        <motion.div 
+                          className="flex-shrink-0 w-2 h-2 rounded-full bg-gradient-to-br from-[#60a5fa] to-[#2563eb] mt-1.5"
+                          whileHover={{ scale: 1.5 }}
+                        />
+                        <span className="text-[#e9d8fd]/85 text-sm leading-relaxed group-hover/item:text-[#e9d8fd] transition-colors">
+                          {skill}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  {/* Corner decorations */}
+                  <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#60a5fa]/20 rounded-br-lg group-hover:border-[#60a5fa]/50 transition-colors"></div>
+                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#60a5fa]/20 rounded-tr-lg group-hover:border-[#60a5fa]/50 transition-colors"></div>
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
         
-        {/* Additional personal info */}
+        {/* Personal info section */}
         <motion.div 
-          className="mt-16 text-center max-w-3xl mx-auto"
+          className="mt-20 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <h3 className="text-2xl font-semibold text-white mb-4">¿Quién Soy?</h3>
-          <p className="text-[#e9d8fd]/80 leading-relaxed">
-            Soy una persona adaptable, responsable y resolutiva, con capacidad para integrarme
-            fácilmente en distintos equipos y entornos de trabajo. Además, me considero creativo
-            y empático, lo que me permite aportar soluciones innovadoras y conectar eficazmente con
-            las personas para cumplir objetivos de manera puntual y eficiente.
-          </p>
-          
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <InfoItem label="Teléfono" value="(+34) 655 35 34 25" />
-            <InfoItem label="Email" value="victorhidalgosanjurjo.1@gmail.com" />
-            <InfoItem label="Ubicación" value="Barcelona" />
-            <InfoItem label="LinkedIn" value="www.linkedin.com/in/vichidsan" isLink />
+          <div className="relative rounded-2xl bg-gradient-to-r from-[#60a5fa]/10 to-[#2563eb]/10 border-2 border-[#60a5fa]/30 p-8 md:p-12 shadow-xl">
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-[#60a5fa]/5 to-[#2563eb]/5 rounded-2xl opacity-0 group-hover:opacity-100"
+              transition={{ duration: 0.3 }}
+            />
+            
+            <div className="relative z-10 text-center">
+              <motion.h3 
+                className="text-3xl font-bold text-white mb-6 flex items-center justify-center gap-3"
+                whileInView={{ scale: 1.05 }}
+                transition={{ type: "spring" }}
+              >
+                <span>✨</span>
+                ¿Quién Soy?
+                <span>✨</span>
+              </motion.h3>
+              <p className="text-[#e9d8fd]/80 leading-relaxed text-lg mb-8">
+                Soy una persona adaptable, responsable y resolutiva, con capacidad para integrarme
+                fácilmente en distintos equipos y entornos de trabajo. Además, me considero creativo
+                y empático, lo que me permite aportar soluciones innovadoras y conectar eficazmente con
+                las personas para cumplir objetivos de manera puntual y eficiente.
+              </p>
+              
+              {/* Contact info cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+                <InfoItem label="📞 Teléfono" value="+34 655 35 34 25" />
+                <InfoItem label="📧 Email" value="victorhidalgosanjurjo.1@gmail.com" />
+                <InfoItem label="📍 Ubicación" value="Barcelona" />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -269,28 +311,16 @@ const HabilidadesSection: React.FC = () => {
 interface InfoItemProps {
   label: string;
   value: string;
-  isLink?: boolean;
 }
 
-const InfoItem: React.FC<InfoItemProps> = ({ label, value, isLink = false }) => {
+const InfoItem: React.FC<InfoItemProps> = ({ label, value }) => {
   return (
     <motion.div 
-      className="px-4 py-2 bg-[#0b1220]/40 backdrop-blur-sm border border-[#60a5fa]/10 rounded-lg flex flex-col items-center"
-      whileHover={{ y: -2, borderColor: "rgba(159, 122, 234, 0.3)" }}
+      className="px-4 py-3 bg-[#0b1220]/40 backdrop-blur-sm border border-[#60a5fa]/30 rounded-xl hover:border-[#60a5fa]/60 transition-all"
+      whileHover={{ y: -2 }}
     >
-      <span className="text-xs text-[#60a5fa] mb-1">{label}</span>
-      {isLink ? (
-        <a 
-          href={`https://${value}`} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-sm text-[#e9d8fd] hover:text-white"
-        >
-          {value}
-        </a>
-      ) : (
-        <span className="text-sm text-[#e9d8fd]">{value}</span>
-      )}
+      <span className="text-xs text-[#60a5fa] font-semibold block mb-1">{label}</span>
+      <span className="text-sm text-[#e9d8fd] block">{value}</span>
     </motion.div>
   );
 };
