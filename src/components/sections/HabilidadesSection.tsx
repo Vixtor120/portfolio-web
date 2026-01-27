@@ -5,55 +5,84 @@ const HabilidadesSection: React.FC = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
   const skills = {
+    "Sistemas y Redes": [
+      "Administración de sistemas Windows y Linux",
+      "Gestión de usuarios, permisos y servicios",
+      "Configuración básica de redes LAN",
+      "Switches y routers (VLANs, IP, DHCP, NAT)",
+      "Resolución de incidencias de red",
+      "Montaje y mantenimiento de equipos",
+      "Ofimática General"
+    ],
     "Desarrollo Web": [
-      "HTML / CSS",
-      "Javascript",
-      "Tailwind CSS",
-      "Java",
-      "C++",
+      "HTML5, CSS3, JavaScript",
       "React",
       "Angular",
+      "Tailwind CSS",
       "Laravel",
-      "PHP"
-    ],
-    "Sistemas Operativos": [
-      "Windows",
-      "Linux"
+      "Java, PHP",
+      "Python",
+      "JSON, XML",
+      "Phaser (desarrollo de juegos)",
+      "Framer Motion"
     ],
     "Bases de Datos": [
-      "SQL / PL-SQL",
-      "MySQL, MariaDB"
+      "SQL y PL/SQL",
+      "MySQL",
+      "MariaDB",
+      "PostgreSQL"
     ],
-    "Diseño y otros": [
+    "Ciberseguridad": [
+      "Gestión y respuesta ante incidentes",
+      "Análisis forense digital (Autopsy, FTK Imager)",
+      "ISO 27001, ENS, RGPD, LOPD",
+      "Control de accesos y autenticación (2FA, VPN)",
+      "Análisis de vulnerabilidades Web (OWASP)",
+      "Nmap (descubrimiento de hosts)",
+      "Wireshark (análisis de tráfico)",
+      "ASVS, OWASP Top Ten"
+    ],
+    "Herramientas de Desarrollo": [
+      "Visual Studio Code",
+      "Eclipse",
+      "Apache NetBeans",
+      "Android Studio",
+      "Git / GitHub",
+      "Docker",
+      "XAMPP",
+      "Laragon",
+      "Jira"
+    ],
+    "Infraestructura y Virtualización": [
+      "VMware",
+      "VirtualBox",
+      "Cisco Packet Tracer",
+      "Putty",
+      "Hostinger, IONOS, Vercel"
+    ],
+    "Diseño & Creatividad": [
       "Figma",
       "Canva",
-      "VMware",
-      "Jira",
-      "Git | GitHub",
-      "Postman",
-      "Visual Studio Code",
-      "IntelliJ IDEA",
-      "Eclipse",
-      "NetBeans",
-      "Docker",
+      "Diseño de interfaces",
+      "Prototipado"
     ],
-    "Competencias Personales": [
+    "Soft Skills": [
       "Trabajo en Equipo",
-      "Organización & Puntualidad",
+      "Organización",
       "Adaptabilidad", 
       "Gestión de Proyectos",
-      "Gestión del Tiempo"
+      "Gestión del Tiempo",
+      "Gestión de Riesgos"
     ],
-    "Extras": [
-      "Inteligencia Artificial",
-      "Innovación",
-      "Creatividad",
-      "Marketing de Productos",
-      "Transformación Digital"
+    "Herramientas Transversales": [
+      "Inteligencia Artificial aplicada",
+      "Transformación Digital",
+      "Innovación tecnológica"
     ],
     "Idiomas": [
-      "Castellano y catalán: Nativo",
-      "Inglés: Nivel Bajo"
+      "Castellano: Nativo",
+      "Catalán: Nativo",
+      "Inglés: Nivel Técnico"
     ]
   };
 
@@ -97,7 +126,7 @@ const HabilidadesSection: React.FC = () => {
             repeatType: "reverse"
           }}
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-[#9f7aea] to-[#6b46c1]" />
+          <div className="w-full h-full rounded-full bg-gradient-to-br from-[#60a5fa] to-[#2563eb]" />
         </motion.div>
         
         {/* Grid pattern */}
@@ -113,21 +142,21 @@ const HabilidadesSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="inline-block mb-3 px-3 py-1 text-sm font-semibold text-[#9f7aea] rounded-md bg-[#1a1433]/30 border border-[#9f7aea]/10">
-            HABILIDADES
+          <span className="inline-block mb-3 px-3 py-1 text-sm font-semibold text-[#60a5fa] rounded-md bg-[#0b1220]/30 border border-[#60a5fa]/10">
+            COMPETENCIAS TÉCNICAS
           </span>
           
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
-            Mis{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9f7aea] to-[#6b46c1]">
-              Habilidades
+            Mi{' '}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] to-[#2563eb]">
+              Stack Técnico
             </span>
           </h2>
           
-          <div className="w-16 h-1 bg-gradient-to-r from-[#9f7aea] to-[#6b46c1] mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-[#60a5fa] to-[#2563eb] mx-auto rounded-full" />
           
           <p className="mt-4 text-[#e9d8fd]/70 max-w-lg mx-auto">
-            Conocimientos adquiridos a lo largo de mi formación y experiencia profesional
+            Mi stack, herramientas clave y áreas en las que me siento fuerte
           </p>
         </motion.div>
         
@@ -142,7 +171,7 @@ const HabilidadesSection: React.FC = () => {
           {Object.entries(skills).map(([category, skillList]) => (
             <motion.div
               key={category}
-              className="relative overflow-hidden rounded-xl bg-[#1a1433]/30 backdrop-blur-sm border border-[#9f7aea]/10"
+              className="relative overflow-hidden rounded-xl bg-[#0b1220]/30 backdrop-blur-sm border border-[#60a5fa]/10"
               variants={itemVariants}
               whileHover={{ 
                 y: -5, 
@@ -155,7 +184,7 @@ const HabilidadesSection: React.FC = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
                   <motion.div 
-                    className="w-1 h-6 bg-gradient-to-b from-[#9f7aea] to-[#6b46c1] rounded-full mr-3"
+                    className="w-1 h-6 bg-gradient-to-b from-[#60a5fa] to-[#2563eb] rounded-full mr-3"
                     animate={{ 
                       height: hoveredCategory === category ? 24 : 20,
                       opacity: hoveredCategory === category ? 1 : 0.8 
@@ -175,7 +204,7 @@ const HabilidadesSection: React.FC = () => {
                       transition={{ delay: index * 0.1 + 0.3 }}
                     >
                       <motion.div 
-                        className="w-2 h-2 rounded-full bg-[#9f7aea]"
+                        className="w-2 h-2 rounded-full bg-[#60a5fa]"
                         animate={{ 
                           scale: hoveredCategory === category ? [1, 1.2, 1] : 1 
                         }}
@@ -192,13 +221,13 @@ const HabilidadesSection: React.FC = () => {
               </div>
               
               {/* Corner decoration */}
-              <div className="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-[#9f7aea]/30 rounded-tr-lg"></div>
-              <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-[#9f7aea]/30 rounded-bl-lg"></div>
+              <div className="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-[#60a5fa]/30 rounded-tr-lg"></div>
+              <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-[#60a5fa]/30 rounded-bl-lg"></div>
               
               {/* Subtle glow effect on hover */}
               {hoveredCategory === category && (
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#9f7aea]/5 to-[#6b46c1]/5"
+                  className="absolute inset-0 bg-gradient-to-br from-[#60a5fa]/5 to-[#2563eb]/5"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -228,7 +257,7 @@ const HabilidadesSection: React.FC = () => {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <InfoItem label="Teléfono" value="(+34) 655 35 34 25" />
             <InfoItem label="Email" value="victorhidalgosanjurjo.1@gmail.com" />
-            <InfoItem label="Ubicación" value="08923 Barcelona" />
+            <InfoItem label="Ubicación" value="Barcelona" />
             <InfoItem label="LinkedIn" value="www.linkedin.com/in/vichidsan" isLink />
           </div>
         </motion.div>
@@ -246,10 +275,10 @@ interface InfoItemProps {
 const InfoItem: React.FC<InfoItemProps> = ({ label, value, isLink = false }) => {
   return (
     <motion.div 
-      className="px-4 py-2 bg-[#1a1433]/40 backdrop-blur-sm border border-[#9f7aea]/10 rounded-lg flex flex-col items-center"
+      className="px-4 py-2 bg-[#0b1220]/40 backdrop-blur-sm border border-[#60a5fa]/10 rounded-lg flex flex-col items-center"
       whileHover={{ y: -2, borderColor: "rgba(159, 122, 234, 0.3)" }}
     >
-      <span className="text-xs text-[#9f7aea] mb-1">{label}</span>
+      <span className="text-xs text-[#60a5fa] mb-1">{label}</span>
       {isLink ? (
         <a 
           href={`https://${value}`} 

@@ -4,6 +4,7 @@ import AboutSection from '../components/sections/AboutSection';
 import ProyectoSection from '../components/sections/ProyectoSection';
 import HabilidadesSection from '../components/sections/HabilidadesSection';
 import ContactSection from '../components/sections/ContactSection';
+import Footer from '../components/Footer';
 
 const Home: React.FC = () => {
   // Asegurarse de que las secciones sean accesibles para la navegación
@@ -30,6 +31,9 @@ const Home: React.FC = () => {
       
       {/* Usando nuestro nuevo componente ContactSection */}
       <ContactSection />
+      
+      {/* Footer con última actualización */}
+      <Footer />
     </main>
   );
 };

@@ -19,7 +19,7 @@ const ContactSection: React.FC = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6 }
     }
   };
 
@@ -27,7 +27,7 @@ const ContactSection: React.FC = () => {
     <section id="contacto" className="py-20 md:py-24 min-h-screen flex items-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0a19] via-[#121212] to-[#1a1028] opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0b1220] via-[#0d1526] to-[#0f172a] opacity-80" />
         
         {/* Animated background elements */}
         <motion.div
@@ -42,11 +42,11 @@ const ContactSection: React.FC = () => {
             repeatType: "reverse"
           }}
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-[#9f7aea] to-[#6b46c1] blur-3xl" />
+          <div className="w-full h-full rounded-full bg-gradient-to-br from-[#60a5fa] to-[#2563eb] blur-3xl" />
         </motion.div>
         
         {/* Decorative grid background */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiM2YjQ2YzEiIGZpbGwtb3BhY2l0eT0iMC4wMyIgZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2LTJoLTF2MnptLTUtNGg0di0xaC00djF6bTktMWgtMXYxaDJ2LTFoLTF6bS0yLTJoMXYtMWgtMXYxem0tNCAwaDN2LTFoLTN2MXptMS0yaDF2LTFoLTF2MXptLTUgMGgxdi0xaC0xdjF6bTggMGgxdi0xaC0xdjF6bTEtMmgxdi0xaC0xdjF6bS0yIDBhMSAxIDAgMSAxIDAgMiAxIDEgMCAwIDEgMC0yem0tNiAwaDFWOWgtMXYxem0yLTV2NGgtMVY0aC00djFoM3Y0SDh2NGg0di0xSDlWOWgzVjVoNXpNNCAxM2g1di0xSDR2MXptMCA0aDJ2LTJINHYyeiIvPjwvZz48L3N2Zz4=')] opacity-30" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiM2MGE1ZmEiIGZpbGwtb3BhY2l0eT0iMC4wMyIgZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2LTJoLTF2MnptLTUtNGg0di0xaC00djF6bTktMWgtMXYxaDJ2LTFoLTF6bS0yLTJoMXYtMWgtMXYxem0tNCAwaDN2LTFoLTN2MXptMS0yaDF2LTFoLTF2MXptLTUgMGgxdi0xaC0xdjF6bTggMGgxdi0xaC0xdjF6bTEtMmgxdi0xaC0xdjF6bS0yIDBhMSAxIDAgMSAxIDAgMiAxIDEgMCAwIDEgMC0yem0tNiAwaDFWOWgtMXYxem0yLTV2NGgtMVY0aC00djFoM3Y0SDh2NGg0di0xSDlWOWgzVjVoNXpNNCAxM2g1di0xSDR2MXptMCA0aDJ2LTJINHYyeiIvPjwvZz48L3N2Zz4=')] opacity-30" />
       </div>
 
       <div className="container mx-auto max-w-5xl z-10">
@@ -58,18 +58,18 @@ const ContactSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="inline-block mb-3 px-3 py-1 text-sm font-semibold text-[#9f7aea] rounded-md bg-[#1a1433]/30 border border-[#9f7aea]/10">
+          <span className="inline-block mb-3 px-3 py-1 text-sm font-semibold text-[#60a5fa] rounded-md bg-[#0b1220]/30 border border-[#60a5fa]/10">
             CONTACTO
           </span>
           
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
             Ponerse en{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9f7aea] to-[#6b46c1]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] to-[#2563eb]">
               Contacto
             </span>
           </h2>
           
-          <div className="w-16 h-1 bg-gradient-to-r from-[#9f7aea] to-[#6b46c1] mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-[#60a5fa] to-[#2563eb] mx-auto rounded-full" />
           
           <p className="mt-4 text-[#e9d8fd]/70 max-w-lg mx-auto">
             ¿Interesado en trabajar juntos? Te invito a ponerte en contacto conmigo a través de cualquiera de estos medios.
@@ -85,16 +85,16 @@ const ContactSection: React.FC = () => {
         >
           {/* Left side - Contact info */}
           <motion.div
-            className="rounded-2xl bg-[#1a1433]/30 backdrop-blur-sm border border-[#9f7aea]/10 shadow-lg p-8"
+            className="rounded-2xl bg-[#0b1220]/30 backdrop-blur-sm border border-[#60a5fa]/10 shadow-lg p-8"
             variants={itemVariants}
             whileHover={{ 
-              boxShadow: "0 20px 40px -12px rgba(159, 122, 234, 0.25)",
-              borderColor: "rgba(159, 122, 234, 0.3)"
+              boxShadow: "0 20px 40px -12px rgba(96, 165, 250, 0.25)",
+              borderColor: "rgba(96, 165, 250, 0.3)"
             }}
           >
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-[#9f7aea]/20">
-                <svg className="w-5 h-5 text-[#9f7aea]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="p-2 rounded-lg bg-[#60a5fa]/20">
+                <svg className="w-5 h-5 text-[#60a5fa]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                 </svg>
               </div>
@@ -108,7 +108,7 @@ const ContactSection: React.FC = () => {
                 variants={itemVariants}
                 whileHover={{ x: 5 }}
               >
-                <div className="p-3 rounded-lg bg-[#1a1433]/60 text-[#9f7aea] group-hover:bg-[#1a1433]/80 transition-all">
+                <div className="p-3 rounded-lg bg-[#0b1220]/60 text-[#60a5fa] group-hover:bg-[#0b1220]/80 transition-all">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
@@ -116,7 +116,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[#e9d8fd]/60 text-sm">Email</p>
-                  <p className="text-white group-hover:text-[#9f7aea] transition-colors">victorhidalgosanjurjo.1@gmail.com</p>
+                  <p className="text-white group-hover:text-[#60a5fa] transition-colors">victorhidalgosanjurjo.1@gmail.com</p>
                 </div>
               </motion.a>
               
@@ -126,14 +126,14 @@ const ContactSection: React.FC = () => {
                 variants={itemVariants}
                 whileHover={{ x: 5 }}
               >
-                <div className="p-3 rounded-lg bg-[#1a1433]/60 text-[#9f7aea] group-hover:bg-[#1a1433]/80 transition-all">
+                <div className="p-3 rounded-lg bg-[#0b1220]/60 text-[#60a5fa] group-hover:bg-[#0b1220]/80 transition-all">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
                 </div>
                 <div>
                   <p className="text-[#e9d8fd]/60 text-sm">Teléfono</p>
-                  <p className="text-white group-hover:text-[#9f7aea] transition-colors">+34 655 353 425</p>
+                  <p className="text-white group-hover:text-[#60a5fa] transition-colors">+34 655 353 425</p>
                 </div>
               </motion.a>
               
@@ -141,7 +141,7 @@ const ContactSection: React.FC = () => {
                 className="flex items-center gap-4"
                 variants={itemVariants}
               >
-                <div className="p-3 rounded-lg bg-[#1a1433]/60 text-[#9f7aea]">
+                <div className="p-3 rounded-lg bg-[#0b1220]/60 text-[#60a5fa]">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
@@ -153,7 +153,7 @@ const ContactSection: React.FC = () => {
               </motion.div>
               
               <motion.div
-                className="mt-8 pt-6 border-t border-[#9f7aea]/10"
+                className="mt-8 pt-6 border-t border-[#60a5fa]/10"
                 variants={itemVariants}
               >
                 <p className="text-[#e9d8fd]/70 mb-4">Sígueme en las redes sociales</p>
@@ -163,7 +163,7 @@ const ContactSection: React.FC = () => {
                     href="https://www.linkedin.com/in/vichidsan/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-[#1a1433]/60 text-[#9f7aea] hover:bg-[#1a1433]/80 transition-all"
+                    className="p-3 rounded-lg bg-[#0b1220]/60 text-[#60a5fa] hover:bg-[#0b1220]/80 transition-all"
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label="LinkedIn"
@@ -177,7 +177,7 @@ const ContactSection: React.FC = () => {
                     href="https://github.com/Vixtor120"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-lg bg-[#1a1433]/60 text-[#9f7aea] hover:bg-[#1a1433]/80 transition-all"
+                    className="p-3 rounded-lg bg-[#0b1220]/60 text-[#60a5fa] hover:bg-[#0b1220]/80 transition-all"
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label="GitHub"
@@ -188,16 +188,30 @@ const ContactSection: React.FC = () => {
                   </motion.a>
                   
                   <motion.a
-                    href="/CuriculumVitae-VictorHidalgo.pdf"
-                    download="CuriculumVitae-VictorHidalgo.pdf"
-                    className="px-4 py-3 rounded-lg bg-gradient-to-r from-[#9f7aea]/30 to-[#6b46c1]/30 text-white hover:from-[#9f7aea]/40 hover:to-[#6b46c1]/40 border border-[#9f7aea]/20 hover:border-[#9f7aea]/30 transition-all flex items-center gap-2"
-                    whileHover={{ y: -2 }}
+                    href="/Curriculum-Vitae-Victor-Hidalgo.pdf"
+                    download="Curriculum-Vitae-Victor-Hidalgo.pdf"
+                    className="relative group px-5 py-3 rounded-lg bg-gradient-to-r from-[#60a5fa] to-[#2563eb] text-white font-semibold transition-all overflow-hidden"
+                    whileHover={{ scale: 1.08, boxShadow: "0 15px 30px -10px rgba(96, 165, 250, 0.6)" }}
                     whileTap={{ scale: 0.97 }}
+                    aria-label="Descargar CV"
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m-9 3h14" />
-                    </svg>
-                    <span>Descargar CV</span>
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent opacity-0 group-hover:opacity-100"
+                      transition={{ duration: 0.3 }}
+                    />
+                    <div className="relative z-10 flex items-center gap-2.5">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20 16v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2" />
+                      </svg>
+                      <span>Descargar CV</span>
+                    </div>
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/50 origin-left"
+                      initial={{ scaleX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </motion.a>
                 </div>
               </motion.div>
@@ -216,7 +230,7 @@ const ContactSection: React.FC = () => {
               {/* Decorative visual element */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div 
-                  className="w-64 h-64 rounded-full bg-gradient-to-r from-[#9f7aea]/20 to-[#6b46c1]/20 filter blur-md"
+                  className="w-64 h-64 rounded-full bg-gradient-to-r from-[#60a5fa]/20 to-[#2563eb]/20 filter blur-md"
                   animate={{
                     scale: [1, 1.1, 1],
                     opacity: [0.6, 0.8, 0.6],
@@ -226,18 +240,18 @@ const ContactSection: React.FC = () => {
               </div>
               
               <div className="absolute inset-0 flex items-center justify-center">
-                <svg className="w-40 h-40 text-[#9f7aea]/70" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-40 h-40 text-[#60a5fa]/70" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.7l-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z" />
                 </svg>
               </div>
               
-              <div className="absolute inset-0 rounded-full border-2 border-[#9f7aea]/30 border-dashed animate-[spin_40s_linear_infinite]" />
+              <div className="absolute inset-0 rounded-full border-2 border-[#60a5fa]/30 border-dashed animate-[spin_40s_linear_infinite]" />
               
               {/* Decorative particles */}
               {[...Array(5)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-3 h-3 rounded-full bg-[#9f7aea]/70"
+                  className="absolute w-3 h-3 rounded-full bg-[#60a5fa]/70"
                   style={{
                     top: `${Math.random() * 100}%`,
                     left: `${Math.random() * 100}%`,
@@ -264,7 +278,7 @@ const ContactSection: React.FC = () => {
               <motion.div
                 className="mt-2 text-lg text-white font-medium"
                 animate={{
-                  color: ['#e9d8fd', '#9f7aea', '#e9d8fd'],
+                  color: ['#e9d8fd', '#60a5fa', '#e9d8fd'],
                 }}
                 transition={{
                   duration: 4,

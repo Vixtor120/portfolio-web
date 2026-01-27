@@ -7,7 +7,7 @@ const HomeSection: React.FC = () => {
       {/* Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Main gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0a19] via-[#121212] to-[#1a1028] opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0b1220] via-[#0d1526] to-[#0f172a] opacity-80" />
 
         {/* Enhanced background elements */}
         <motion.div
@@ -22,7 +22,7 @@ const HomeSection: React.FC = () => {
             repeatType: "reverse"
           }}
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-[#9f7aea] to-[#6b46c1] blur-3xl" />
+          <div className="w-full h-full rounded-full bg-gradient-to-br from-[#60a5fa] to-[#2563eb] blur-3xl" />
         </motion.div>
 
         <motion.div
@@ -38,7 +38,7 @@ const HomeSection: React.FC = () => {
             delay: 5
           }}
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-tr from-[#6b46c1] to-[#9f7aea] blur-3xl" />
+          <div className="w-full h-full rounded-full bg-gradient-to-tr from-[#2563eb] to-[#60a5fa] blur-3xl" />
         </motion.div>
 
         {/* Modern floating particles */}
@@ -50,7 +50,7 @@ const HomeSection: React.FC = () => {
               style={{
                 width: `${Math.random() * 4 + 2}px`,
                 height: `${Math.random() * 4 + 2}px`,
-                backgroundColor: `rgba(159, 122, 234, ${Math.random() * 0.15 + 0.1})`,
+                backgroundColor: `rgba(96, 165, 250, ${Math.random() * 0.15 + 0.1})`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
               }}
@@ -88,7 +88,7 @@ const HomeSection: React.FC = () => {
           >
             Hola, soy{' '}
             <motion.span
-              className="bg-clip-text text-transparent bg-gradient-to-r from-[#9f7aea] to-[#6b46c1]"
+              className="bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] to-[#2563eb]"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
               }}
@@ -108,7 +108,7 @@ const HomeSection: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Desarrollando tecnología con propósito. Con experiencia en desarrollo de software, actualmente me preparo para especializarme en administración de sistemas y ciberseguridad.
+            Desarrollando tecnología con propósito. Con experiencia en desarrollo de software, actualmente curso el máster en Ciberseguridad y el Grado Superior en Administración de Sistemas Informáticos y Redes.
           </motion.p>
 
           {/* Modern CTAs with enhanced animation */}
@@ -120,8 +120,8 @@ const HomeSection: React.FC = () => {
           >
             <motion.a
               href="#contacto"
-              className="px-6 py-3.5 rounded-lg bg-gradient-to-r from-[#9f7aea] to-[#6b46c1] text-white font-medium shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2 group relative overflow-hidden"
-              whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(107, 70, 193, 0.5)" }}
+              className="px-6 py-3.5 rounded-lg bg-gradient-to-r from-[#60a5fa] to-[#2563eb] text-white font-medium shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 group relative overflow-hidden"
+              whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.5)" }}
               whileTap={{ scale: 0.98 }}
             >
               {/* Enhanced shine effect */}
@@ -156,11 +156,11 @@ const HomeSection: React.FC = () => {
 
             <motion.a
               href="#proyectos"
-              className="px-6 py-3.5 rounded-lg border border-[#9f7aea]/30 text-white hover:border-[#9f7aea]/60 flex items-center justify-center gap-2 relative bg-[#1a1433]/30 backdrop-blur-sm"
+              className="px-6 py-3.5 rounded-lg border border-[#60a5fa]/30 text-white hover:border-[#60a5fa]/60 flex items-center justify-center gap-2 relative bg-[#0b1220]/30 backdrop-blur-sm"
               whileHover={{
                 scale: 1.03,
-                backgroundColor: "rgba(26, 20, 51, 0.5)",
-                boxShadow: "0 8px 20px -4px rgba(159, 122, 234, 0.25)",
+                backgroundColor: "rgba(11, 18, 32, 0.5)",
+                boxShadow: "0 8px 20px -4px rgba(37, 99, 235, 0.25)",
               }}
               whileTap={{ scale: 0.98 }}
             >
@@ -192,7 +192,7 @@ const HomeSection: React.FC = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
         >
           <motion.div
-            className="w-full lg:w-[400px] rounded-xl border border-[#9f7aea]/30 overflow-hidden shadow-2xl shadow-[#6b46c1]/20 bg-[#0d0d0d]/90 relative preserve-3d"
+            className="w-full lg:w-[400px] rounded-xl border border-[#60a5fa]/30 overflow-hidden shadow-2xl shadow-[#2563eb]/20 bg-[#0d0d0d]/90 relative preserve-3d"
             whileHover={{
               rotateY: 5,
               rotateX: -5,
@@ -201,7 +201,7 @@ const HomeSection: React.FC = () => {
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
             {/* Terminal header with interactive elements */}
-            <div className="bg-[#0d0d0d] px-4 py-3 flex items-center gap-2 border-b border-[#9f7aea]/20">
+            <div className="bg-[#0d0d0d] px-4 py-3 flex items-center gap-2 border-b border-[#60a5fa]/20">
               <motion.div
                 className="w-3 h-3 rounded-full bg-[#ff5f56]"
                 whileHover={{ scale: 1.2 }}
@@ -215,10 +215,10 @@ const HomeSection: React.FC = () => {
                 whileHover={{ scale: 1.2 }}
               />
               <div className="ml-3 flex items-center gap-2">
-                <div className="text-[#9f7aea]/80 text-xs font-mono flex items-center">
+                <div className="text-[#60a5fa]/80 text-xs font-mono flex items-center">
                   <span>profile.js</span>
                   <motion.span
-                    className="inline-block w-1 h-3 ml-1 bg-[#9f7aea]"
+                    className="inline-block w-1 h-3 ml-1 bg-[#60a5fa]"
                     animate={{ opacity: [0, 1] }}
                     transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
                   />
@@ -227,8 +227,8 @@ const HomeSection: React.FC = () => {
 
               <div className="ml-auto flex gap-2">
                 <motion.div
-                  className="flex items-center gap-1 bg-[#1a1433]/50 px-2 py-0.5 rounded text-[#e9d8fd]/50 text-xs"
-                  whileHover={{ backgroundColor: 'rgba(26, 20, 51, 0.7)' }}
+                  className="flex items-center gap-1 bg-[#0b1220]/50 px-2 py-0.5 rounded text-[#e9d8fd]/50 text-xs"
+                  whileHover={{ backgroundColor: 'rgba(11, 18, 32, 0.7)' }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
                   <span>online</span>
@@ -239,7 +239,7 @@ const HomeSection: React.FC = () => {
             {/* Terminal content with enhanced animations */}
             <div className="p-5 font-mono text-sm text-[#e9d8fd]/80 space-y-2">
               <div className="flex gap-2">
-                <span className="text-[#9f7aea]">$</span>
+                <span className="text-[#60a5fa]">$</span>
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -255,30 +255,50 @@ const HomeSection: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.3 }}
               >
-                <span className="text-[#27c93f]">{">"}</span> <motion.span
-                  animate={{ color: ['#e9d8fd', '#9f7aea', '#e9d8fd'] }}
+                <span className="text-[#27c93f]">{">"}</span> <span className="text-white">node profile.js</span>
+              </motion.div>
+
+              <motion.div
+                className="mt-3"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5 }}
+              >
+                <motion.span
+                  animate={{ color: ['#e9d8fd', '#60a5fa', '#e9d8fd'] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  Cargando perfil...
+                  ⏳ Inicializando perfil profesional...
                 </motion.span>
               </motion.div>
 
               <motion.div
-                className="mt-4 space-y-1"
+                className="mt-5 space-y-1.5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.6 }}
+                transition={{ delay: 1.8 }}
               >
                 <span className="text-[#ffbd2e] font-semibold">{"{"}</span>
+                <motion.div
+                  initial={{ backgroundColor: "rgba(159, 122, 234, 0)" }}
+                  animate={{ backgroundColor: ["rgba(159, 122, 234, 0)", "rgba(159, 122, 234, 0.1)", "rgba(159, 122, 234, 0)"] }}
+                  transition={{ delay: 2.0, duration: 1, repeat: 1 }}
+                  className="ml-4 rounded"
+                >
+                  <span className="text-[#e06c75]">desarrollador</span>
+                  <span className="text-white">: </span>
+                  <span className="text-[#98c379]">"Victor Hidalgo"</span>
+                  <span className="text-white">,</span>
+                </motion.div>
                 <motion.div
                   initial={{ backgroundColor: "rgba(159, 122, 234, 0)" }}
                   animate={{ backgroundColor: ["rgba(159, 122, 234, 0)", "rgba(159, 122, 234, 0.1)", "rgba(159, 122, 234, 0)"] }}
                   transition={{ delay: 2.2, duration: 1, repeat: 1 }}
                   className="ml-4 rounded"
                 >
-                  <span className="text-[#e06c75]">nombre</span>
+                  <span className="text-[#e06c75]">educación</span>
                   <span className="text-white">: </span>
-                  <span className="text-[#98c379]">"Victor Hidalgo"</span>
+                  <span className="text-[#98c379]">"CETI | ASIX"</span>
                   <span className="text-white">,</span>
                 </motion.div>
                 <motion.div
@@ -287,31 +307,9 @@ const HomeSection: React.FC = () => {
                   transition={{ delay: 2.4, duration: 1, repeat: 1 }}
                   className="ml-4 rounded"
                 >
-                  <span className="text-[#e06c75]">ubicación</span>
+                  <span className="text-[#e06c75]">especialidades</span>
                   <span className="text-white">: </span>
-                  <span className="text-[#98c379]">"Barcelona"</span>
-                  <span className="text-white">,</span>
-                </motion.div>
-                <motion.div
-                  initial={{ backgroundColor: "rgba(159, 122, 234, 0)" }}
-                  animate={{ backgroundColor: ["rgba(159, 122, 234, 0)", "rgba(159, 122, 234, 0.1)", "rgba(159, 122, 234, 0)"] }}
-                  transition={{ delay: 2.6, duration: 1, repeat: 1 }}
-                  className="ml-4 rounded"
-                >
-                  <span className="text-[#e06c75]">formación</span>
-                  <span className="text-white">: </span>
-                  <span className="text-[#98c379]">"Desarrollo de Aplicaciones Web"</span>
-                  <span className="text-white">,</span>
-                </motion.div>
-                <motion.div
-                  initial={{ backgroundColor: "rgba(159, 122, 234, 0)" }}
-                  animate={{ backgroundColor: ["rgba(159, 122, 234, 0)", "rgba(159, 122, 234, 0.1)", "rgba(159, 122, 234, 0)"] }}
-                  transition={{ delay: 2.8, duration: 1, repeat: 1 }}
-                  className="ml-4 rounded"
-                >
-                  <span className="text-[#e06c75]">especialización</span>
-                  <span className="text-white">: </span>
-                  <span className="text-[#98c379]">"Frontend"</span>
+                  <span className="text-[#98c379]">"Frontend | Ciberseguridad | Sistemas"</span>
                 </motion.div>
                 <span className="text-[#ffbd2e] font-semibold">{"}"}</span>
               </motion.div>
@@ -320,12 +318,12 @@ const HomeSection: React.FC = () => {
                 className="mt-6 flex gap-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 3.2 }}
+                transition={{ delay: 2.8 }}
               >
-                <span className="text-[#9f7aea]">$</span>
+                <span className="text-[#60a5fa]">$</span>
                 <span className="inline-flex items-center">
                   <motion.span
-                    className="inline-block w-1.5 h-3.5 bg-[#9f7aea]"
+                    className="inline-block w-1.5 h-3.5 bg-[#60a5fa]"
                     animate={{ opacity: [0, 1] }}
                     transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
                   />
@@ -340,7 +338,7 @@ const HomeSection: React.FC = () => {
                 {Array.from({ length: 8 }).map((_, i) => (
                   <div
                     key={i}
-                    className="h-3 my-2 bg-[#9f7aea]/10"
+                    className="h-3 my-2 bg-[#60a5fa]/10"
                     style={{
                       width: `${Math.random() * 40 + 60}%`,
                       opacity: Math.random() * 0.8 + 0.2
@@ -352,7 +350,7 @@ const HomeSection: React.FC = () => {
 
             {/* Enhanced 3D shadow */}
             <motion.div
-              className="absolute -z-10 inset-x-4 bottom-0 bg-[#6b46c1]/20 rounded-full blur-xl h-5 transform translate-y-1.5 opacity-50"
+              className="absolute -z-10 inset-x-4 bottom-0 bg-[#2563eb]/20 rounded-full blur-xl h-5 transform translate-y-1.5 opacity-50"
               animate={{ opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
             />
@@ -372,8 +370,8 @@ const HomeSection: React.FC = () => {
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2.5 }}
         >
-          <span className="text-xs text-white/50 font-mono tracking-widest">SCROLL</span>
-          <svg className="w-5 h-5 text-[#9f7aea]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span className="text-xs text-white/50 font-mono tracking-widest">DESPLÁZATE</span>
+          <svg className="w-5 h-5 text-[#60a5fa]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </motion.div>
