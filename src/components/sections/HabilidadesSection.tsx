@@ -261,66 +261,9 @@ const HabilidadesSection: React.FC = () => {
             );
           })}
         </motion.div>
-        
-        {/* Personal info section */}
-        <motion.div 
-          className="mt-20 max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-        >
-          <div className="relative rounded-2xl bg-gradient-to-r from-[#60a5fa]/10 to-[#2563eb]/10 border-2 border-[#60a5fa]/30 p-8 md:p-12 shadow-xl">
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-[#60a5fa]/5 to-[#2563eb]/5 rounded-2xl opacity-0 group-hover:opacity-100"
-              transition={{ duration: 0.3 }}
-            />
-            
-            <div className="relative z-10 text-center">
-              <motion.h3 
-                className="text-3xl font-bold text-white mb-6 flex items-center justify-center gap-3"
-                whileInView={{ scale: 1.05 }}
-                transition={{ type: "spring" }}
-              >
-                <span>✨</span>
-                ¿Quién Soy?
-                <span>✨</span>
-              </motion.h3>
-              <p className="text-[#e9d8fd]/80 leading-relaxed text-lg mb-8">
-                Soy una persona adaptable, responsable y resolutiva, con capacidad para integrarme
-                fácilmente en distintos equipos y entornos de trabajo. Además, me considero creativo
-                y empático, lo que me permite aportar soluciones innovadoras y conectar eficazmente con
-                las personas para cumplir objetivos de manera puntual y eficiente.
-              </p>
-              
-              {/* Contact info cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-                <InfoItem label="📞 Teléfono" value="+34 655 35 34 25" />
-                <InfoItem label="📧 Email" value="victorhidalgosanjurjo.1@gmail.com" />
-                <InfoItem label="📍 Ubicación" value="Barcelona" />
-              </div>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
-  );
-};
-
-interface InfoItemProps {
-  label: string;
-  value: string;
-}
-
-const InfoItem: React.FC<InfoItemProps> = ({ label, value }) => {
-  return (
-    <motion.div 
-      className="px-4 py-3 bg-[#0b1220]/40 backdrop-blur-sm border border-[#60a5fa]/30 rounded-xl hover:border-[#60a5fa]/60 transition-all"
-      whileHover={{ y: -2 }}
-    >
-      <span className="text-xs text-[#60a5fa] font-semibold block mb-1">{label}</span>
-      <span className="text-sm text-[#e9d8fd] block break-words line-clamp-2">{value}</span>
-    </motion.div>
   );
 };
 

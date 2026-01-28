@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 const AboutSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
+  const [expandedCert, setExpandedCert] = useState<string | null>(null);
 
   const education = [
     {
@@ -351,29 +352,120 @@ const AboutSection: React.FC = () => {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="space-y-4 text-[#e9d8fd]/90"
+                    className="space-y-5 text-[#e9d8fd]/90"
                   >
                     <h3 className="text-xl md:text-2xl font-semibold text-white leading-relaxed">
+                      Buenas, soy{' '}
                       <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] to-[#2563eb]">
-                        Profesional en Tecnología
-                      </span>{' '}
-                      con experiencia en desarrollo y sistemas
+                        Víctor Hidalgo
+                      </span>
                     </h3>
 
                     <p className="leading-relaxed">
-                      Mi trayectoria profesional comenzó en el desarrollo de software, donde descubrí mi pasión por crear soluciones tecnológicas que impacten positivamente en la sociedad. Actualmente, curso ciclos formativos en Ciberseguridad en Entornos de Tecnologías de la Información (CETI) y Administración de Sistemas Informáticos y Redes (ASIX), donde combino lógica y creatividad para construir aplicaciones seguras e innovadoras.
+                      Podría comenzar contándote mi trayectoria profesional, pero prefiero decirte que, para mí, la tecnología siempre ha sido una forma de crear y aportar valor, tanto a las personas como al mundo que nos rodea. Mi camino comenzó en el desarrollo de software y, con el tiempo, me ha llevado a formarme en Ciberseguridad y Administración de Sistemas y Redes.
                     </p>
 
                     <div className="mt-4 pt-4 border-t border-[#60a5fa]/10"></div>
 
                     <p className="leading-relaxed">
-                      He tenido la oportunidad de colaborar con instituciones como Guttman, desarrollando juegos neuropsicológicos que contribuyen a la salud cognitiva, y trabajar en proyectos de desarrollo frontend y backend en IRIS Technology Solutions. Estas experiencias me han permitido fortalecer mis habilidades técnicas y trabajar en equipo para alcanzar objetivos comunes.
+                      Durante estos años de formación he tenido la oportunidad de colaborar con <span className="text-white font-medium">Guttmann</span> en el desarrollo de juegos neuropsicológicos enfocados en la salud cognitiva. Actualmente, participo en la creación de la plataforma de streaming de <span className="text-white font-medium">Movida Deportiva</span>, un proyecto que desarrollo junto a Monlau. Estas experiencias me han permitido crecer a nivel técnico y, al mismo tiempo, mejorar mis habilidades en trabajo en equipo, coordinación y gestión de tareas.
                     </p>
 
                     <div className="mt-4 pt-4 border-t border-[#60a5fa]/10">
-                      <h4 className="text-lg font-medium text-white mb-2">Mi objetivo</h4>
+                      <h4 className="text-lg font-medium text-white mb-3">Mi objetivo</h4>
+                      <p className="leading-relaxed mb-3">
+                        Mi objetivo a futuro es seguir desarrollándome profesionalmente en el ámbito de los sistemas y la ciberseguridad, creando soluciones que supongan un reto constante. Lo que más me motiva es enfrentar nuevos desafíos y trabajar con objetivos claros.
+                      </p>
                       <p className="leading-relaxed">
-                        Mi objetivo es seguir creciendo profesionalmente en el sector tecnológico, especializándome en administración de sistemas y ciberseguridad, mientras exploro cómo la tecnología puede mejorar la vida de las personas y contribuir al bienestar social.
+                        A largo plazo, me gustaría acceder a la universidad y obtener certificaciones en ciberseguridad:
+                      </p>
+                      <div className="space-y-2 ml-4">
+                        <motion.button
+                          onClick={() => setExpandedCert(expandedCert === 'ewpt' ? null : 'ewpt')}
+                          onMouseEnter={() => setExpandedCert('ewpt')}
+                          onMouseLeave={() => setExpandedCert(null)}
+                          className="w-full text-left"
+                        >
+                          <motion.div
+                            className="p-3 bg-[#60a5fa]/10 rounded-lg border border-[#60a5fa]/20 hover:border-[#60a5fa]/40 transition-colors cursor-pointer"
+                            animate={{ 
+                              backgroundColor: expandedCert === 'ewpt' ? 'rgba(96, 165, 250, 0.2)' : 'rgba(96, 165, 250, 0.1)',
+                              borderColor: expandedCert === 'ewpt' ? 'rgba(96, 165, 250, 0.4)' : 'rgba(96, 165, 250, 0.2)'
+                            }}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="text-[#60a5fa] font-semibold">eWPT</span>
+                              <motion.svg
+                                className="w-4 h-4 text-[#60a5fa]"
+                                animate={{ rotate: expandedCert === 'ewpt' ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                              </motion.svg>
+                            </div>
+                            <AnimatePresence>
+                              {expandedCert === 'ewpt' && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="mt-2 pt-2 border-t border-[#60a5fa]/20 text-sm text-[#e9d8fd]"
+                                >
+                                  eLearnSecurity Web Penetration Tester - Especialización en testing de seguridad y auditoría de aplicaciones web
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </motion.div>
+                        </motion.button>
+
+                        <motion.button
+                          onClick={() => setExpandedCert(expandedCert === 'oswe' ? null : 'oswe')}
+                          onMouseEnter={() => setExpandedCert('oswe')}
+                          onMouseLeave={() => setExpandedCert(null)}
+                          className="w-full text-left"
+                        >
+                          <motion.div
+                            className="p-3 bg-[#60a5fa]/10 rounded-lg border border-[#60a5fa]/20 hover:border-[#60a5fa]/40 transition-colors cursor-pointer"
+                            animate={{ 
+                              backgroundColor: expandedCert === 'oswe' ? 'rgba(96, 165, 250, 0.2)' : 'rgba(96, 165, 250, 0.1)',
+                              borderColor: expandedCert === 'oswe' ? 'rgba(96, 165, 250, 0.4)' : 'rgba(96, 165, 250, 0.2)'
+                            }}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="text-[#60a5fa] font-semibold">OSWE</span>
+                              <motion.svg
+                                className="w-4 h-4 text-[#60a5fa]"
+                                animate={{ rotate: expandedCert === 'oswe' ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                              </motion.svg>
+                            </div>
+                            <AnimatePresence>
+                              {expandedCert === 'oswe' && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="mt-2 pt-2 border-t border-[#60a5fa]/20 text-sm text-[#e9d8fd]"
+                                >
+                                  Offensive Security Web Expert - Certificación avanzada en pentesting de aplicaciones web y análisis de vulnerabilidades complejas
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </motion.div>
+                        </motion.button>
+                      </div>
+                      <p className="leading-relaxed text-sm mt-3">
+                        Sin perder nunca el hábito de seguir aprendiendo y evolucionando en el sector tecnológico.
                       </p>
                     </div>
                   </motion.div>
