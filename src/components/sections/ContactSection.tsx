@@ -188,8 +188,8 @@ const ContactSection: React.FC = () => {
                   </motion.a>
                   
                   <motion.a
-                    href="/Curriculum-Vitae-Victor-Hidalgo.pdf"
-                    download="Curriculum-Vitae-Victor-Hidalgo.pdf"
+                    href="/Victor-Hidalgo-CV.pdf"
+                    download="Victor-Hidalgo-CV.pdf"
                     className="relative group px-5 py-3 rounded-lg bg-gradient-to-r from-[#60a5fa] to-[#2563eb] text-white font-semibold transition-all overflow-hidden"
                     whileHover={{ scale: 1.08, boxShadow: "0 15px 30px -10px rgba(96, 165, 250, 0.6)" }}
                     whileTap={{ scale: 0.97 }}

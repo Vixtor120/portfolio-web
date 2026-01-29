@@ -229,7 +229,7 @@ const AboutSection: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <motion.a
                   href="mailto:victorhidalgosanjurjo.1@gmail.com"
-                  className="flex items-center gap-3 hover:text-[#60a5fa] transition-colors group"
+                  className="flex items-center gap-3 hover:text-[#60a5fa] transition-colors group min-w-0"
                   whileHover={{ x: 3 }}
                 >
                   <div className="p-2 rounded-lg bg-[#0b1220]/30 text-[#60a5fa] group-hover:bg-[#0b1220]/50 transition-colors">
@@ -238,7 +238,7 @@ const AboutSection: React.FC = () => {
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </div>
-                  <span className="text-[#e9d8fd]/90 text-sm group-hover:text-white transition-colors">victorhidalgosanjurjo.1@gmail.com</span>
+                  <span className="text-[#e9d8fd]/90 text-sm group-hover:text-white transition-colors break-all">victorhidalgosanjurjo.1@gmail.com</span>
                 </motion.a>
 
                 <motion.a
@@ -299,8 +299,8 @@ const AboutSection: React.FC = () => {
                 </motion.a>
 
                 <motion.a
-                  href="/Curriculum-Vitae-Victor-Hidalgo.pdf"
-                  download="Curriculum-Vitae-Victor-Hidalgo.pdf"
+                  href="/Victor-Hidalgo-CV.pdf"
+                  download="Victor-Hidalgo-CV.pdf"
                   className="relative group px-4 py-2 rounded-lg bg-gradient-to-r from-[#60a5fa] to-[#2563eb] text-white font-medium transition-all overflow-hidden"
                   whileHover={{ scale: 1.08, boxShadow: "0 10px 25px -5px rgba(96, 165, 250, 0.5)" }}
                   whileTap={{ scale: 0.97 }}

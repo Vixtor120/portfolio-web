@@ -7,7 +7,7 @@ const HabilidadesSection: React.FC = () => {
       "Administración de sistemas Windows y Linux",
       "Gestión de usuarios, permisos y servicios",
       "Configuración básica de redes LAN",
-      "Switches y routers (VLANs, IP, DHCP, NAT)",
+      "Configuración de routers y switches (VLANs, IP, DHCP, NAT)",
       "Resolución de incidencias de red",
       "Montaje y mantenimiento de equipos",
       "Ofimática General"
@@ -53,10 +53,8 @@ const HabilidadesSection: React.FC = () => {
     ],
     "Infraestructura y Virtualización": [
       "Virtualización básica (VirtualBox, VMware)",
-      "Contenedores (Docker, Podman)",
-      "Control de versiones (Git, GitHub)",
-      "Plataformas en la nube (Azure, AWS básico)",
-      "CI/CD básico"
+      "Contenedores (Docker)",
+      "Control de versiones (Git, GitHub)"
     ],
     "Diseño & Creatividad": [
       "Figma (prototipado de interfaces)",
@@ -75,12 +73,12 @@ const HabilidadesSection: React.FC = () => {
     "Herramientas Transversales": [
       "Microsoft Office 365",
       "Google Workspace",
-      "Project Management (Jira, Trello, Asana)"
+      "Jira"
     ],
     "Idiomas": [
-      "Español (Nativo)",
-      "Inglés (Intermedio)",
-      "Gallego (Básico)"
+      "Castellano (Nativo)",
+      "Catalán (Nativo)",
+      "Inglés técnico"
     ]
   };
 

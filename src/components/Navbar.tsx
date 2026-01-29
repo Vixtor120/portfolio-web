@@ -218,8 +218,8 @@ const Navbar = ({ activeLink, setActiveLink, navLinks }: NavbarProps) => {
                 
                 {/* Botón de CV mejorado */}
                 <motion.a
-                  href="/Curriculum-Vitae-Victor-Hidalgo.pdf"
-                  download="Curriculum-Vitae-Victor-Hidalgo.pdf"
+                  href="/Victor-Hidalgo-CV.pdf"
+                  download="Victor-Hidalgo-CV.pdf"
                   className="relative group px-4 py-2 rounded-lg flex items-center gap-2 bg-gradient-to-r from-[#60a5fa] to-[#2563eb] text-white font-semibold overflow-hidden"
                   whileHover={{ scale: 1.08, boxShadow: "0 8px 20px -5px rgba(96, 165, 250, 0.4)" }}
                   whileTap={{ scale: 0.97 }}
@@ -397,8 +397,8 @@ const Navbar = ({ activeLink, setActiveLink, navLinks }: NavbarProps) => {
                   </div>
                   
                   <motion.a
-                    href="/Curriculum-Vitae-Victor-Hidalgo.pdf"
-                    download="Curriculum-Vitae-Victor-Hidalgo.pdf"
+                    href="/Victor-Hidalgo-CV.pdf"
+                    download="Victor-Hidalgo-CV.pdf"
                     className="px-3 py-2 rounded-lg bg-gradient-to-r from-[#60a5fa]/30 to-[#2563eb]/30 text-white flex items-center gap-2 border border-[#60a5fa]/30"
                     whileHover={{ y: -2, backgroundColor: 'rgba(96, 165, 250, 0.2)' }}
                     whileTap={{ scale: 0.97 }}
