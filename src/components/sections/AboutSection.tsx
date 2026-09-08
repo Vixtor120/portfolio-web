@@ -1,9 +1,26 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import React, { useState } from 'react';
+
+// Anti-bot obfuscated contact data (Base64)
+const EMAIL_B64 = "dmljdG9yaGlkYWxnb3Nhbmp1cmpvLjFAZ21haWwuY29t";
+const PHONE_B64 = "KzM0NjU1MzUzNDI1";
 
 const AboutSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
-  const [expandedCert, setExpandedCert] = useState<string | null>(null);
+  const [emailRevealed, setEmailRevealed] = useState(false);
+  const [phoneRevealed, setPhoneRevealed] = useState(false);
+  const [copiedType, setCopiedType] = useState<'email' | 'phone' | null>(null);
+
+  const getEmail = () => typeof window !== 'undefined' ? atob(EMAIL_B64) : '';
+  const getPhone = () => typeof window !== 'undefined' ? atob(PHONE_B64) : '';
+
+  const handleCopy = (e: React.MouseEvent, text: string, type: 'email' | 'phone') => {
+    e.stopPropagation();
+    e.preventDefault();
+    navigator.clipboard.writeText(text);
+    setCopiedType(type);
+    setTimeout(() => setCopiedType(null), 2000);
+  };
 
   const education = [
     {
@@ -18,7 +35,7 @@ const AboutSection: React.FC = () => {
       institution: "CETI - Monlau Formación Profesional",
       period: "2024 - 2026",
       type: "Especialización",
-      badge: "Actual"
+      badge: "Completado"
     },
     {
       title: "Formación Agentes del Cambio en Transformación Digital",
@@ -45,16 +62,24 @@ const AboutSection: React.FC = () => {
 
   const experience = [
     {
-      role: "Coordinador de proyecto DAW",
-      company: "Monlau + Movida Deportiva TV",
-      period: "2026 - Actual",
-      description: "Coordinación y desarrollo de un proyecto del ciclo DAW en colaboración con Movida Deportiva TV.",
-      typeTag: "Colaboración",
+      role: "ServiceDesk (Contrato de Prácticas)",
+      company: "h&k | Smart Tech. Human Touch",
+      period: "Jun 2026 - Actual",
+      description: "Gestión, análisis y resolución de incidencias IT mediante sistema de tickets. Atención y seguimiento de incidencias de usuarios, diagnóstico y resolución de problemas técnicos de hardware y software, escalado de incidencias y seguimiento hasta su resolución.",
+      typeTag: "Contrato de Prácticas",
       badge: "Actual"
     },
     {
+      role: "Coordinador de proyecto DAW",
+      company: "Monlau + Movida Deportiva TV",
+      period: "Ene 2026 - Jun 2026",
+      description: "Coordinación y desarrollo de un proyecto del ciclo DAW en colaboración con Movida Deportiva TV.",
+      typeTag: "Colaboración",
+      badge: "Completado"
+    },
+    {
       role: "Colaborador",
-      company: "Guttman",
+      company: "Institut Guttmann",
       period: "2025",
       description: "Desarrollo de juegos neuropsicológicos para contribuir a la salud cognitiva.",
       typeTag: "Colaboración",
@@ -102,14 +127,14 @@ const AboutSection: React.FC = () => {
     }
   ];
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeInOut" as any
+        ease: "easeInOut"
       }
     },
     exit: {
@@ -117,7 +142,7 @@ const AboutSection: React.FC = () => {
       y: -20,
       transition: {
         duration: 0.3,
-        ease: "easeInOut" as any
+        ease: "easeInOut"
       }
     }
   };
@@ -227,32 +252,82 @@ const AboutSection: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <motion.a
-                  href="mailto:victorhidalgosanjurjo.1@gmail.com"
-                  className="flex items-center gap-3 hover:text-[#60a5fa] transition-colors group min-w-0"
-                  whileHover={{ x: 3 }}
-                >
-                  <div className="p-2 rounded-lg bg-[#0b1220]/30 text-[#60a5fa] group-hover:bg-[#0b1220]/50 transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
+                {/* Protected Email */}
+                <div className="flex items-center justify-between gap-2 p-2 rounded-lg bg-[#0b1220]/20 border border-[#60a5fa]/10">
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                    <div className="p-2 rounded-lg bg-[#0b1220]/50 text-[#60a5fa] flex-shrink-0">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                      </svg>
+                    </div>
+                    {emailRevealed ? (
+                      <a
+                        href={`mailto:${getEmail()}`}
+                        className="text-[#e9d8fd]/90 text-sm hover:text-[#60a5fa] transition-colors break-all font-medium"
+                      >
+                        {getEmail()}
+                      </a>
+                    ) : (
+                      <span className="text-[#e9d8fd]/40 font-mono text-xs tracking-widest select-none">
+                        vic••••••••••••@gmail.com
+                      </span>
+                    )}
                   </div>
-                  <span className="text-[#e9d8fd]/90 text-sm group-hover:text-white transition-colors break-all">victorhidalgosanjurjo.1@gmail.com</span>
-                </motion.a>
+                  {!emailRevealed ? (
+                    <button
+                      onClick={() => setEmailRevealed(true)}
+                      className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#60a5fa]/10 text-[#60a5fa] hover:bg-[#60a5fa]/20 border border-[#60a5fa]/20 transition-all flex-shrink-0"
+                    >
+                      Mostrar
+                    </button>
+                  ) : (
+                    <button
+                      onClick={(e) => handleCopy(e, getEmail(), 'email')}
+                      className="px-2 py-1 rounded-md text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all flex-shrink-0"
+                    >
+                      {copiedType === 'email' ? '✓' : 'Copiar'}
+                    </button>
+                  )}
+                </div>
 
-                <motion.a
-                  href="tel:+34655353425"
-                  className="flex items-center gap-3 hover:text-[#60a5fa] transition-colors group"
-                  whileHover={{ x: 3 }}
-                >
-                  <div className="p-2 rounded-lg bg-[#0b1220]/30 text-[#60a5fa] group-hover:bg-[#0b1220]/50 transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
+                {/* Protected Phone */}
+                <div className="flex items-center justify-between gap-2 p-2 rounded-lg bg-[#0b1220]/20 border border-[#60a5fa]/10">
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                    <div className="p-2 rounded-lg bg-[#0b1220]/50 text-[#60a5fa] flex-shrink-0">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                      </svg>
+                    </div>
+                    {phoneRevealed ? (
+                      <a
+                        href={`tel:${getPhone()}`}
+                        className="text-[#e9d8fd]/90 text-sm hover:text-[#60a5fa] transition-colors font-medium"
+                      >
+                        +34 655 353 425
+                      </a>
+                    ) : (
+                      <span className="text-[#e9d8fd]/40 font-mono text-xs tracking-widest select-none">
+                        +34 65• ••• •••
+                      </span>
+                    )}
                   </div>
-                  <span className="text-[#e9d8fd]/90 text-sm group-hover:text-white transition-colors">655 353 425</span>
-                </motion.a>
+                  {!phoneRevealed ? (
+                    <button
+                      onClick={() => setPhoneRevealed(true)}
+                      className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#60a5fa]/10 text-[#60a5fa] hover:bg-[#60a5fa]/20 border border-[#60a5fa]/20 transition-all flex-shrink-0"
+                    >
+                      Mostrar
+                    </button>
+                  ) : (
+                    <button
+                      onClick={(e) => handleCopy(e, getPhone(), 'phone')}
+                      className="px-2 py-1 rounded-md text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all flex-shrink-0"
+                    >
+                      {copiedType === 'phone' ? '✓' : 'Copiar'}
+                    </button>
+                  )}
+                </div>
 
                 <motion.div
                   className="flex items-center gap-3 sm:col-span-2"
@@ -368,104 +443,13 @@ const AboutSection: React.FC = () => {
                     <div className="mt-4 pt-4 border-t border-[#60a5fa]/10"></div>
 
                     <p className="leading-relaxed">
-                      Durante estos años de formación he tenido la oportunidad de colaborar con <span className="text-white font-medium">Guttmann</span> en el desarrollo de juegos neuropsicológicos enfocados en la salud cognitiva. Actualmente, participo en la creación de la plataforma de streaming de <span className="text-white font-medium">Movida Deportiva</span>, un proyecto que desarrollo junto a Monlau. Estas experiencias me han permitido crecer a nivel técnico y, al mismo tiempo, mejorar mis habilidades en trabajo en equipo, coordinación y gestión de tareas.
+                      Durante estos años de formación he tenido la oportunidad de colaborar con el <span className="text-white font-medium">Institut Guttmann</span> en el desarrollo de juegos neuropsicológicos enfocados en la salud cognitiva. Actualmente, participo en la creación de la plataforma de streaming de <span className="text-white font-medium">Movida Deportiva</span>, un proyecto que desarrollo junto a Monlau. Estas experiencias me han permitido crecer a nivel técnico y, al mismo tiempo, mejorar mis habilidades en trabajo en equipo, coordinación y gestión de tareas.
                     </p>
 
                     <div className="mt-4 pt-4 border-t border-[#60a5fa]/10">
                       <h4 className="text-lg font-medium text-white mb-3">Mi objetivo</h4>
                       <p className="leading-relaxed mb-3">
-                        Mi objetivo a futuro es seguir desarrollándome profesionalmente en el ámbito de los sistemas y la ciberseguridad, creando soluciones que supongan un reto constante. Lo que más me motiva es enfrentar nuevos desafíos y trabajar con objetivos claros.
-                      </p>
-                      <p className="leading-relaxed">
-                        A largo plazo, me gustaría acceder a la universidad y obtener certificaciones en ciberseguridad:
-                      </p>
-                      <div className="space-y-2 ml-4">
-                        <motion.button
-                          onClick={() => setExpandedCert(expandedCert === 'ewpt' ? null : 'ewpt')}
-                          onMouseEnter={() => setExpandedCert('ewpt')}
-                          onMouseLeave={() => setExpandedCert(null)}
-                          className="w-full text-left"
-                        >
-                          <motion.div
-                            className="p-3 bg-[#60a5fa]/10 rounded-lg border border-[#60a5fa]/20 hover:border-[#60a5fa]/40 transition-colors cursor-pointer"
-                            animate={{ 
-                              backgroundColor: expandedCert === 'ewpt' ? 'rgba(96, 165, 250, 0.2)' : 'rgba(96, 165, 250, 0.1)',
-                              borderColor: expandedCert === 'ewpt' ? 'rgba(96, 165, 250, 0.4)' : 'rgba(96, 165, 250, 0.2)'
-                            }}
-                          >
-                            <div className="flex items-center justify-between">
-                              <span className="text-[#60a5fa] font-semibold">eWPT</span>
-                              <motion.svg
-                                className="w-4 h-4 text-[#60a5fa]"
-                                animate={{ rotate: expandedCert === 'ewpt' ? 180 : 0 }}
-                                transition={{ duration: 0.2 }}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                              </motion.svg>
-                            </div>
-                            <AnimatePresence>
-                              {expandedCert === 'ewpt' && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: 'auto' }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="mt-2 pt-2 border-t border-[#60a5fa]/20 text-sm text-[#e9d8fd]"
-                                >
-                                  eLearnSecurity Web Penetration Tester - Especialización en testing de seguridad y auditoría de aplicaciones web
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </motion.div>
-                        </motion.button>
-
-                        <motion.button
-                          onClick={() => setExpandedCert(expandedCert === 'oswe' ? null : 'oswe')}
-                          onMouseEnter={() => setExpandedCert('oswe')}
-                          onMouseLeave={() => setExpandedCert(null)}
-                          className="w-full text-left"
-                        >
-                          <motion.div
-                            className="p-3 bg-[#60a5fa]/10 rounded-lg border border-[#60a5fa]/20 hover:border-[#60a5fa]/40 transition-colors cursor-pointer"
-                            animate={{ 
-                              backgroundColor: expandedCert === 'oswe' ? 'rgba(96, 165, 250, 0.2)' : 'rgba(96, 165, 250, 0.1)',
-                              borderColor: expandedCert === 'oswe' ? 'rgba(96, 165, 250, 0.4)' : 'rgba(96, 165, 250, 0.2)'
-                            }}
-                          >
-                            <div className="flex items-center justify-between">
-                              <span className="text-[#60a5fa] font-semibold">OSWE</span>
-                              <motion.svg
-                                className="w-4 h-4 text-[#60a5fa]"
-                                animate={{ rotate: expandedCert === 'oswe' ? 180 : 0 }}
-                                transition={{ duration: 0.2 }}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                              </motion.svg>
-                            </div>
-                            <AnimatePresence>
-                              {expandedCert === 'oswe' && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: 'auto' }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="mt-2 pt-2 border-t border-[#60a5fa]/20 text-sm text-[#e9d8fd]"
-                                >
-                                  Offensive Security Web Expert - Certificación avanzada en pentesting de aplicaciones web y análisis de vulnerabilidades complejas
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </motion.div>
-                        </motion.button>
-                      </div>
-                      <p className="leading-relaxed text-sm mt-3">
-                        Sin perder nunca el hábito de seguir aprendiendo y evolucionando en el sector tecnológico.
+                        Mi objetivo a futuro es acceder a la universidad para seguir formándome y desarrollándome profesionalmente en el ámbito de los sistemas y la ciberseguridad, creando soluciones que supongan un reto constante. Lo que más me motiva es enfrentar nuevos desafíos y trabajar con objetivos claros, sin perder nunca el hábito de seguir aprendiendo y evolucionando en el sector tecnológico.
                       </p>
                     </div>
                   </motion.div>

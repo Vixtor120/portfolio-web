@@ -108,7 +108,7 @@ const HomeSection: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Desarrollando tecnología con propósito. Con experiencia en desarrollo de software, actualmente curso el máster en Ciberseguridad y el Grado Superior en Administración de Sistemas Informáticos y Redes.
+            Desarrollando tecnología con propósito. Con experiencia en desarrollo de software y especialización en Ciberseguridad, actualmente curso el Grado Superior en Administración de Sistemas Informáticos y Redes.
           </motion.p>
 
           {/* Modern CTAs with enhanced animation */}

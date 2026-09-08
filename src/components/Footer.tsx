@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const lastUpdate = "Febrero 2026";
+  const lastUpdate = "Septiembre 2026";
 
   return (
     <footer className="relative py-12 px-4 sm:px-6 lg:px-8 border-t border-[#60a5fa]/20 bg-gradient-to-b from-[#0b1220]/50 to-[#0d1526]/80">
